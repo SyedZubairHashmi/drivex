@@ -28,10 +28,10 @@ const navigation = [
       { name: "Sold Cars", href: "/cars/sold" },
     ],
   },
-  { name: "Sales & Payments", href: "#", icon: faDollarSign },
-  { name: "Investors", href: "#", icon: faUsers },
-  { name: "Analytics", href: "#", icon: faChartLine },
-  { name: "Settings", href: "#", icon: faCog },
+  { name: "Sales & Payments", href: "/sales", icon: faDollarSign },
+  { name: "Investors", href: "/investors", icon: faUsers },
+  { name: "Analytics", href: "/analytics", icon: faChartLine },
+  { name: "Settings", href: "/settings", icon: faCog },
 ];
 
 export function Sidebar() {
