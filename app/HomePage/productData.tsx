@@ -16,7 +16,7 @@ tickicon:"",
 num3:"5.0G",
 price:"Price",
 amount_price:"Price 3500",
-sub_price:"3000"
+sub_price:"PKR 3000"
 }
 ,
 
@@ -32,7 +32,7 @@ tickicon:"",
 num3:"5.0G",
 price:"Price",
 amount_price:"PKR 3500",
-sub_price:"3000"
+sub_price:"PKR 3000"
 }
 ,
  {
@@ -47,7 +47,7 @@ tickicon:"",
 num3:"5.0G",
 price:"Price",
 amount_price:"PKR 3000",
-sub_price:"3500"
+sub_price:"PKR 3000"
 
 }
 ,
@@ -63,7 +63,7 @@ tickicon:"",
 num3:"5.0G",
 price:"Price",
 amount_price:"PKR 3500",
-sub_price:"30,00"
+sub_price:"PKR 3000"
 },
 ]
 export default productData; 

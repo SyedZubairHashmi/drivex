@@ -4,11 +4,11 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <>
-      <section className="bg-black text-white w-full flex flex-col relative">
+      <section className=" bg-black text-white w-full flex flex-col relative">
         {/* Content Wrapper */}
         <div
-          className="py-12 max-w-[1200px] flex-col gap-20"
-          style={{ marginLeft: '150px', marginRight: '160px' }}
+          className="py-12 max-w-[1400px] mx-auto px-8 flex-col gap-20"
+          // style={{ marginLeft: '150px', marginRight: '160px' }}
         >
           {/* Top text and button */}
           <div className="flex flex-col sm:flex-row justify-between items-start gap-6">

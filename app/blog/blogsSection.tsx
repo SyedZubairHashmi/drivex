@@ -38,9 +38,8 @@ export default function BlogSection() {
         {stories.map(({ id, title, description, imgSrc }) => (
           <div
             key={id}
-            className="border rounded-3xl h-[450px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center"
+            className="border rounded-3xl h-[500px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center"
           >
-            {/* Image Box with border */}
             <div className="w-300 mt-4 border rounded-3xl overflow-hidden">
               <Image
                 src={imgSrc}
@@ -51,20 +50,18 @@ export default function BlogSection() {
               />
             </div>
 
-            {/* Content */}
-            <div className="px-4 sm:px-6 pb-6 flex-1 flex flex-col justify-between text-center">
+            <div className="px-4 sm:px-6 pb-6 flex-1 flex flex-col justify-between text-start mt-6">
               <div>
                 <h3 className="font-medium text-2xl sm:text-xl mb-2">
                   {title}
                 </h3>
-                <p className="text-gray-700 mb-4 text-sm  sm:text-base">
+                <p className="text-gray-700 mb-4 text-sm sm:text-base">
                   {description}
                 </p>
               </div>
 
-              {/* Button fixed at bottom */}
               <div className="mt-auto w-full">
-                <button className="w-full border border-gray-300 rounded-md py-2 text-sm font-medium hover:bg-gray-100 transition">
+                <button className="w-full border   border-gray-300 rounded-2xl py-2 text-xl  hover:bg-gray-100 transition">
                   Read My Story
                 </button>
               </div>

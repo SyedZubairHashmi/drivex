@@ -83,7 +83,7 @@ const TestimonialSlider = () => {
   }, [testimonials.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black flex flex-col items-center justify-start p-4 pt-12">
+    <div className=" bg-gradient-to-br from-gray-900 to-black flex flex-col items-center justify-start p-4 pt-12">
       <div className="w-full mx-auto">
         {/* Header Section */}
         <div className="text-center mb-6">
@@ -97,7 +97,7 @@ const TestimonialSlider = () => {
         </div>
 
         {/* Continuous Loop Slider */}
-        <div className="overflow-hidden relative w-full mt-12">
+        <div className="overflow-hidden relative w-full pt-12 pb-6 mt-16">
           <div
             ref={sliderRef}
             className="flex space-x-6 transition-none"
@@ -120,10 +120,10 @@ const TestimonialSlider = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-lg font-semibold  text-white">
                       {testimonial.name}
                     </h3>
-                    <p className="text-blue-400 text-sm">
+                    <p className="text-gray-400 text-base">
                       {testimonial.handle}
                     </p>
                   </div>

@@ -5,22 +5,16 @@ import carimage1 from "@/public/logo.png";
 import Image from "next/image";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCarsOpen, setMobileCarsOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
-  const [carsOpen, setCarsOpen] = useState(false); // desktop cars dropdown
-  const [productsOpen, setProductsOpen] = useState(false); // desktop products dropdown
+  const [carsOpen, setCarsOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
 
   return (
-    <nav
-      className={`absolute top-0 left-0 w-full z-20 py-3 flex items-center justify-between px-4 md:px-12 
-        ${isHome ? "bg-transparent" : "bg-black/70 shadow"} transition-colors`}
-    >
+    <nav className="fixed top-0 left-0 w-full z-20 py-3 flex items-center justify-between px-4 md:px-12 bg-transparent">
       {/* Logo */}
       <div className="flex items-center space-x-2 cursor-pointer">
         <Image
@@ -33,11 +27,11 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <ul className={`hidden md:flex space-x-6 font-medium relative text-[16px]`}>
+      <ul className="hidden md:flex space-x-6 font-medium text-[16px] text-white">
         {/* Cars Dropdown */}
         <li className="relative cursor-pointer">
           <div
-            className={`flex items-center gap-1 hover:text-green-400 ${isHome ? "text-white" : "text-black"}`}
+            className="flex items-center gap-1 hover:text-green-600"
             onClick={() => setCarsOpen(!carsOpen)}
           >
             Cars <FaChevronDown size={12} className={`transition-transform ${carsOpen ? "rotate-180" : ""}`} />
@@ -57,7 +51,7 @@ const Navbar = () => {
         {/* Products Dropdown */}
         <li className="relative cursor-pointer">
           <div
-            className={`flex items-center gap-1 hover:text-green-400 ${isHome ? "text-white" : "text-black"}`}
+            className="flex items-center gap-1 hover:text-green-600"
             onClick={() => setProductsOpen(!productsOpen)}
           >
             Products <FaChevronDown size={12} className={`transition-transform ${productsOpen ? "rotate-180" : ""}`} />
@@ -77,35 +71,33 @@ const Navbar = () => {
           )}
         </li>
 
-        <li className="hover:text-green-400 cursor-pointer text-white">
+        <li className="hover:text-green-600 cursor-pointer">
           <Link href="/blog">Blog</Link>
         </li>
-        <li className="hover:text-green-400 cursor-pointer text-white">
+        <li className="hover:text-green-600 cursor-pointer">
           <Link href="/about">About</Link>
         </li>
-        <li className="hover:text-green-400 cursor-pointer text-white">
+        <li className="hover:text-green-600 cursor-pointer">
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
 
       {/* Desktop Button */}
       <button
-        className={`hidden md:block w-[193px] h-[50px] border border-gray-400 rounded-full bg-transparent 
-          hover:bg-gray-400 hover:text-black transition
-          ${isHome ? "text-white" : "text-black"} text-[16px]`}
+        className="hidden md:block w-[193px] h-[50px] border border-gray-400 rounded-full bg-white 
+        hover:bg-gray-200 text-black transition text-[16px]"
       >
         Get My Dream Car
       </button>
 
       {/* Mobile Menu Button */}
       <div className="md:hidden z-30 flex items-center">
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`${isHome ? "text-white" : "text-black"}`}
-        >
-          {mobileMenuOpen 
-            ? <FaTimes size={24} className={isHome ? "text-white" : "text-black"} /> 
-            : <FaBars size={24} className={isHome ? "text-white" : "text-black"} />
-          }
+        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-black">
+          {mobileMenuOpen ? (
+            <FaTimes size={24} className="text-black" />
+          ) : (
+            <FaBars size={24} className="text-black" />
+          )}
         </button>
       </div>
 
@@ -168,7 +160,7 @@ const Navbar = () => {
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </li>
           <li>
-            <button className="border border-gray-400 text-black rounded-full bg-transparent hover:bg-gray-400 w-full py-2 text-[16px]">
+            <button className="border border-gray-400 text-black rounded-full bg-white hover:bg-gray-200 w-full py-2 text-[16px]">
               Get My Dream Car
             </button>
           </li>
