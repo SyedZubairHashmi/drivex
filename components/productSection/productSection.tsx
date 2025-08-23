@@ -12,7 +12,7 @@ const ProductSection = () => {
         {/* Top Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3 sm:gap-0">
           <div className="flex flex-col">
-            <button className="text-black-700 font-bold text-[44px] hover:underline mb-1 text-left">
+            <button className="text-black font-bold text-[44px] hover:underline mb-1 text-left">
               Other Products
             </button>
             <div className="text-gray-600 text-[20px]">
@@ -42,10 +42,10 @@ const ProductSection = () => {
                 />
               </div>
 
-              <h2 className="text-[24px] font-bold ">{car.title}</h2>
-              <p className="text-[24px] text-gray-500">{car.sub_title}</p>
+              <h2 className="text-[24px] sm:text-[26px] font-bold mt-2">{car.title}</h2>
+              <p className="text-[20px] sm:text-[22px] text-gray-500">{car.sub_title}</p>
 
-              <div className="flex justify-arund  text-[16px] text-gray-600 flex-wrap gap-2">
+              <div className="flex text-[16px] text-gray-600 flex-wrap gap-2 mt-2">
                 <span className="flex items-center gap-1">
                   <LiaCarSideSolid />
                   {car.num2}
@@ -56,30 +56,24 @@ const ProductSection = () => {
                 </span>
               </div>
 
-             <div className="mt-1 flex flex-col">
-  {/* Choti Heading */}
-  <div className="text-gray-500 text-[14px]">
-    Price
-  </div>
+              <div className="mt-3 flex flex-col">
+                {/* Choti Heading */}
+                <div className="text-gray-500 text-[14px]">
+                  Price
+                </div>
 
-  {/* Price Row */}
-  <div className="flex items-center gap-2 ">
-    {/* Main Price */}
-    <span className="font-bold text-[24px] text-green-700">
-      {car.amount_price}
-    </span>
+                {/* Price Row */}
+                <div className="flex items-center gap-2 mt-1">
+                  {/* Main Price */}
+                  <span className="font-bold text-[24px] text-green-700">
+                    {car.amount_price}
+                  </span>
 
-    {/* Sub Price + Old Price */}
-    <span className="text-gray-400 line-through">
-      {car.price}
-    </span>
-
-    <span className="text-gray-500 text-[12px]">
-      {car.sub_price}
-    </span>
-  </div>
-</div>
-
+                  <span className="text-gray-500 text-[12px] line-through">
+                    {car.sub_price}
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>

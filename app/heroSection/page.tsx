@@ -26,9 +26,9 @@ export default function HeroSection() {
         </p>
 
         {/* Search Bar Row */}
-        <div className="mt-10 w-full flex flex-col sm:flex-row items-center justify-center sm:gap-6">
+        <div className="mt-4 w-full flex flex-col sm:flex-row items-center justify-center sm:gap-2">
           {/* White Rounded Box */}
-          <div className="flex flex-col sm:flex-row items-center gap-4  p-4 rounded-lg shadow-md max-w-[1400px] w-full mx-auto">
+          <div className="flex flex-col sm:flex-row items-end gap-2 rounded-lg shadow-md max-w-[1400px] w-full mx-auto">
             
             {/* Input wrapper div with full rounded border */}
             <div className="flex-1 sm:w-[914px] h-[57px] bg-white border border-gray-300 rounded-full flex items-center px-6">
@@ -37,7 +37,7 @@ export default function HeroSection() {
                 placeholder="Search..."
                 className="flex-1 sm:w[914px] h-[57]  bg-transparent focus:outline-none border-none text-black font-light"
               />
-              <div className="flex items-center gap-3 ml-0 sm:ml-4">
+              <div className="flex items-center gap-1 ml-0 sm:ml-4">
               {/* Price Range */}
               <div className="border border-gray-300 rounded-full px-4 py-2">
                 <select className="bg-transparent focus:outline-none border-none text-gray-700 font-light">
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
               {/* Cities */}
               <div className="border border-gray-300 rounded-full px-4 py-2">
-                <select className="bg-transparent focus:outline-none border-none text-black font-light">
+                <select className="bg-transparent focus:outline-none border-none text-gray-700 font-light">
                   <option>All Cities</option>
                   <option>Karachi</option>
                   <option>Lahore</option>
@@ -59,13 +59,9 @@ export default function HeroSection() {
               </div>
             </div>
             </div>
-
-            {/* Price range and cities wrapper */}
-            
           </div>
-
           {/* Search Button */}
-          <button className="bg-green-700 hover:bg-green-600 text-white px-8 py-3 rounded-full shadow-lg font-medium transition w-full sm:w-auto">
+          <button className="bg-red-700 hover:bg-green-600 sm:w[124px] h-[57] text-white px-8 py-4 text-lg rounded-full shadow-lg font-medium transition w-full sm:w-auto">
             Search
           </button>
         </div>
