@@ -17,9 +17,9 @@ export default function BlogPage() {
   const totalPages = Math.ceil(blogData.length / blogsPerPage);
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 ">
+    <div className="w-full min-h-screen bg-gray-50">
       {/* Heading */}
-      <h1 className="text-4xl font-bold text-center mb-4">Our Blog</h1>
+      <h1 className="text-4xl font-bold text-center mt-16 mb-4">Our Blog</h1>
       <p className="text-lg text-center text-gray-600 mb-12">
         Latest articles and tutorials to help you learn Flutter development
       </p>
@@ -56,7 +56,7 @@ export default function BlogPage() {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center mt-12 space-x-2">
+      <div className="flex justify-center mt-4 space-x-2">
         {Array.from({ length: totalPages }, (_, i) => (
           <button
             key={i}

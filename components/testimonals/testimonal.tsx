@@ -1,7 +1,6 @@
-// components/TestimonialSlider.tsx
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface Testimonial {
   id: number;
@@ -60,9 +59,7 @@ const TestimonialSlider = () => {
     },
   ];
 
-  // do dafa duplicate kiya for seamless loop
   const infiniteTestimonials = [...testimonials, ...testimonials];
-
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -74,7 +71,7 @@ const TestimonialSlider = () => {
 
     const step = () => {
       pos -= 1; // speed (px per frame)
-      if (Math.abs(pos) >= (testimonials.length * 320)) {
+      if (Math.abs(pos) >= testimonials.length * 320) {
         pos = 0; // reset position jab half loop complete ho
       }
       slider.style.transform = `translateX(${pos}px)`;
@@ -86,19 +83,21 @@ const TestimonialSlider = () => {
   }, [testimonials.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black flex flex-col items-center justify-center p-4 py-16">
-      <div className="w-full max-w-20xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black flex flex-col items-center justify-start p-4 pt-12">
+      <div className="w-full mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">Customer Feedback</h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+        <div className="text-center mb-6">
+          <h1 className="text-[44px] font-bold text-white mb-3">
+            Customer Feedback
+          </h1>
+          <p className="text-gray-300 text-[18px] max-w-2xl mx-auto">
             We appreciate your input and would like to take a moment to provide
             you with some detailed feedback specifically to your experience.
           </p>
         </div>
 
         {/* Continuous Loop Slider */}
-        <div className="overflow-hidden relative w-full">
+        <div className="overflow-hidden relative w-full mt-12">
           <div
             ref={sliderRef}
             className="flex space-x-6 transition-none"
@@ -107,7 +106,7 @@ const TestimonialSlider = () => {
             {infiniteTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className="w-[600px] flex-shrink-0 bg-gray-800 border border-gray-700 rounded-xl p-6 h-[280px] flex flex-col"
+                className="w-[600px] flex-shrink-0 border border-gray-700 rounded-xl p-6 h-[280px] flex flex-col"
               >
                 {/* Avatar */}
                 <div className="flex items-center mb-6">
@@ -124,20 +123,15 @@ const TestimonialSlider = () => {
                     <h3 className="text-lg font-semibold text-white">
                       {testimonial.name}
                     </h3>
-                    <p className="text-blue-400 text-sm">{testimonial.handle}</p>
+                    <p className="text-blue-400 text-sm">
+                      {testimonial.handle}
+                    </p>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 relative">
-                  <svg
-                    className="w-19 h-10 text-blue-500 opacity-30 absolute -top-2 -left-2"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                  <p className="text-gray-300 leading-relaxed relative z-10">
+                  <p className="text-gray-300 leading-relaxed relative z-10 text-[19px]">
                     {testimonial.content}
                   </p>
                 </div>
@@ -149,5 +143,4 @@ const TestimonialSlider = () => {
     </div>
   );
 };
-
 export default TestimonialSlider;

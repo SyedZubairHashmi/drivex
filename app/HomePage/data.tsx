@@ -1,4 +1,4 @@
-import carimage1 from "@/public/ford-f-150-2021.png";
+import carimage1 from "@/public/car1.png";
 
 
 

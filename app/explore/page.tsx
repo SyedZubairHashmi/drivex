@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const videos = [
   {
@@ -31,7 +32,7 @@ const videos = [
 
 export default function Page() {
   const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 2; // front pe 2 videos
+  const visibleCount = 2;
 
   const prev = () => {
     setStartIndex((prev) =>
@@ -46,45 +47,58 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-black text-white py-10 px-4 sm:px-6">
-      {/* Header */}
-      <div className="max-w-[1200px] mx-auto pb-6 text-center sm:text-left">
-        <h2 className="text-2xl sm:text-3xl font-normal">Explore Every Feature in Detail</h2>
-        <p className="text-gray-400 text-sm sm:text-base mt-1">
-          Full tour of design, comfort & performance.
-        </p>
-      </div>
-
-      {/* Video Cards */}
-      <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-        {videos.slice(startIndex, startIndex + visibleCount).map((video) => (
-          <div
-            key={video.id}
-            className="w-full sm:w-[48%] md:w-[48%] lg:w-[45%] relative rounded-lg overflow-hidden shadow-lg bg-[#111] cursor-pointer"
-          >
-            <video
-              src={video.videoUrl}
-              controls
-              className="w-full h-64 sm:h-72 md:h-80 lg:h-80 object-cover rounded-lg"
-            />
+    <div className="bg-black text-white py-12 px-8 sm:px-6">
+      <div className="max-w-[1400px] mx-auto">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row justify-between ml-3 items-start sm:items-center mb-6 gap-3 sm:gap-0">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-normal ml-3">
+              Explore Every Feature in Detail
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base ml-3">
+              Full tour of design, comfort & performance.
+            </p>
           </div>
-        ))}
-      </div>
+          <button className="mt-4 sm:mt-0 text-white border border-gray-500 rounded-2xl px-4 py-1 hover:bg-gray-800">
+            View More
+          </button>
+        </div>
 
-      {/* Arrows */}
-      <div className="max-w-[1200px] mx-auto mt-6 flex justify-center gap-10 items-center select-none">
-        <button
-          onClick={prev}
-          className="text-white text-3xl sm:text-4xl bg-transparent border-none focus:outline-none"
-        >
-          &#8249;
-        </button>
-        <button
-          onClick={next}
-          className="text-white text-3xl sm:text-4xl bg-transparent border-none focus:outline-none"
-        >
-          &#8250;
-        </button>
+        {/* Video Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ml-6">
+          {videos.slice(startIndex, startIndex + visibleCount).map((video) => (
+            <div
+              key={video.id}
+              className="relative rounded-lg overflow-hidden shadow-lg bg-[#111] cursor-pointer"
+            >
+              <video
+                src={video.videoUrl}
+                controls
+                className="w-full h-[500px] object-cover rounded-lg"
+              />
+              {/* Title Overlay */}
+              <div className="absolute bottom-2 left-2 bg-black/60 px-3 py-1 rounded text-sm">
+                {video.title}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Arrows */}
+        <div className="mt-6 flex justify-center gap-2 items-center select-none">
+          <button
+            onClick={prev}
+            className="w-14 h-14 flex items-center justify-center rounded-full border border-gray-500 hover:bg-gray-800 transition"
+          >
+            <FaChevronLeft size={28} />
+          </button>
+          <button
+            onClick={next}
+            className="w-14 h-14 flex items-center justify-center rounded-full border border-gray-500 hover:bg-gray-800 transition"
+          >
+            <FaChevronRight size={28} />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import carimage1 from "@/public/ford-f-150-2021.png";
+import carimage1 from "@/public/image 22.png";
 
 
 
@@ -15,7 +15,7 @@ num2:"Honda Seadan",
 tickicon:"",
 num3:"5.0G",
 price:"Price",
-amount_price:"PKR 3500",
+amount_price:"Price 3500",
 sub_price:"3000"
 }
 ,

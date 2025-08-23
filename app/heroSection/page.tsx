@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
 
 export default function HeroSection() {
   const [city, setCity] = useState("All Cities");
@@ -13,10 +12,10 @@ export default function HeroSection() {
       style={{ backgroundImage: "url('/heroCar.png')" }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
         {/* Heading */}
         <h1 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[50px] font-semibold leading-tight">
           Experience the thrill of driving <br /> the finest cars with us!
@@ -27,30 +26,42 @@ export default function HeroSection() {
         </p>
 
         {/* Search Bar Row */}
-        <div className="mt-10 w-full flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          {/* White Rounded Box (Inputs + Dropdowns) */}
-          <div className="flex flex-col sm:flex-row bg-white rounded-full shadow-lg px-3 py-4 sm:py-1 gap-4 sm:gap-6 w-full max-w-full sm:max-w-[900px] items-center">
+        <div className="mt-10 w-full flex flex-col sm:flex-row items-center justify-center sm:gap-6">
+          {/* White Rounded Box */}
+          <div className="flex flex-col sm:flex-row items-center gap-4  p-4 rounded-lg shadow-md max-w-[1400px] w-full mx-auto">
             
-            {/* Input Field */}
-            <input
-              type="text"
-              placeholder="Car Model"
-              className="flex-1 px-4 py-2 rounded-full outline-none text-lg text-black placeholder:text-gray-400 bg-white w-full"
-            />
+            {/* Input wrapper div with full rounded border */}
+            <div className="flex-1 sm:w-[914px] h-[57px] bg-white border border-gray-300 rounded-full flex items-center px-6">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="flex-1 sm:w[914px] h-[57]  bg-transparent focus:outline-none border-none text-black font-light"
+              />
+              <div className="flex items-center gap-3 ml-0 sm:ml-4">
+              {/* Price Range */}
+              <div className="border border-gray-300 rounded-full px-4 py-2">
+                <select className="bg-transparent focus:outline-none border-none text-gray-700 font-light">
+                  <option>Price Range</option>
+                  <option>$0 - $100</option>
+                  <option>$100 - $500</option>
+                  <option>$500+</option>
+                </select>
+              </div>
 
-            {/* City Dropdown */}
-            <div className="relative w-full sm:w-auto">
-              <button className="flex items-center justify-between w-full sm:w-auto px-4 py-2 rounded-full bg-gray-100 text-gray-700 border border-gray-300 hover:border-green-600 transition">
-                {city} <FaChevronDown className="ml-2 text-sm text-gray-500" />
-              </button>
+              {/* Cities */}
+              <div className="border border-gray-300 rounded-full px-4 py-2">
+                <select className="bg-transparent focus:outline-none border-none text-black font-light">
+                  <option>All Cities</option>
+                  <option>Karachi</option>
+                  <option>Lahore</option>
+                  <option>Islamabad</option>
+                </select>
+              </div>
+            </div>
             </div>
 
-            {/* Price Dropdown */}
-            <div className="relative w-full sm:w-auto">
-              <button className="flex items-center justify-between w-full sm:w-auto px-4 py-2 rounded-full bg-gray-100 text-gray-700 border border-gray-300 hover:border-green-600 transition">
-                {price} <FaChevronDown className="ml-2 text-sm text-gray-500" />
-              </button>
-            </div>
+            {/* Price range and cities wrapper */}
+            
           </div>
 
           {/* Search Button */}

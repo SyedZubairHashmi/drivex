@@ -13,80 +13,86 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCarsOpen, setMobileCarsOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [carsOpen, setCarsOpen] = useState(false); // desktop cars dropdown
+  const [productsOpen, setProductsOpen] = useState(false); // desktop products dropdown
 
   return (
     <nav
       className={`absolute top-0 left-0 w-full z-20 py-3 flex items-center justify-between px-4 md:px-12 
-        ${isHome ? "bg-transparent" : "bg-black[700] shadow"} transition-colors`}
+        ${isHome ? "bg-transparent" : "bg-black/70 shadow"} transition-colors`}
     >
       {/* Logo */}
       <div className="flex items-center space-x-2 cursor-pointer">
         <Image
           src={carimage1}
           alt="Logo"
-          width={128}
-          height={32}
+          width={184}
+          height={24}
           className="object-contain"
         />
       </div>
 
       {/* Desktop Menu */}
-      <ul
-        className={`hidden md:flex space-x-6 font-medium relative 
-          ${isHome ? "text-white" : "text-black"}`}
-      >
+      <ul className={`hidden md:flex space-x-6 font-medium relative text-[16px]`}>
         {/* Cars Dropdown */}
-        <li className="relative group cursor-pointer">
+        <li className="relative cursor-pointer">
           <div
             className={`flex items-center gap-1 hover:text-green-400 ${isHome ? "text-white" : "text-black"}`}
+            onClick={() => setCarsOpen(!carsOpen)}
           >
-            Cars <FaChevronDown size={12} />
+            Cars <FaChevronDown size={12} className={`transition-transform ${carsOpen ? "rotate-180" : ""}`} />
           </div>
-          <ul className="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-md w-48">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
-              <Link href="/cars-collection">Cars Collection</Link>
-            </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
-              <Link href="/cars-accessories">Cars Accessories</Link>
-            </li>
-          </ul>
+          {carsOpen && (
+            <ul className="absolute left-0 mt-2 bg-white text-black rounded shadow-md w-48 text-[16px]">
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
+                <Link href="/cars-collection">Cars Collection</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
+                <Link href="/cars-accessories">Cars Accessories</Link>
+              </li>
+            </ul>
+          )}
         </li>
 
         {/* Products Dropdown */}
-        <li className="relative group cursor-pointer">
+        <li className="relative cursor-pointer">
           <div
             className={`flex items-center gap-1 hover:text-green-400 ${isHome ? "text-white" : "text-black"}`}
+            onClick={() => setProductsOpen(!productsOpen)}
           >
-            Products <FaChevronDown size={12} />
+            Products <FaChevronDown size={12} className={`transition-transform ${productsOpen ? "rotate-180" : ""}`} />
           </div>
-          <ul className="absolute left-0 mt-2 hidden group-hover:block bg-white text-black rounded shadow-md w-48">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
-              <Link href="/tyres">Tyres</Link>
-            </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
-              <Link href="/batteries">Batteries</Link>
-            </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
-              <Link href="/accessories">Accessories</Link>
-            </li>
-          </ul>
+          {productsOpen && (
+            <ul className="absolute left-0 mt-2 bg-white text-black rounded shadow-md w-48 text-[16px]">
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
+                <Link href="/tyres">Tyres</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
+                <Link href="/batteries">Batteries</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">
+                <Link href="/accessories">Accessories</Link>
+              </li>
+            </ul>
+          )}
         </li>
 
-        <li className="hover:text-green-400 cursor-pointer">
+        <li className="hover:text-green-400 cursor-pointer text-white">
           <Link href="/blog">Blog</Link>
         </li>
-        <li className="hover:text-green-400 cursor-pointer">
+        <li className="hover:text-green-400 cursor-pointer text-white">
           <Link href="/about">About</Link>
         </li>
-        <li className="hover:text-green-400 cursor-pointer">
+        <li className="hover:text-green-400 cursor-pointer text-white">
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
 
       {/* Desktop Button */}
       <button
-        className={`hidden md:block border border-gray-400 px-4 py-1 rounded-full bg-transparent hover:bg-gray-400 hover:text-black transition
-          ${isHome ? "text-white" : "text-black"}`}
+        className={`hidden md:block w-[193px] h-[50px] border border-gray-400 rounded-full bg-transparent 
+          hover:bg-gray-400 hover:text-black transition
+          ${isHome ? "text-white" : "text-black"} text-[16px]`}
       >
         Get My Dream Car
       </button>
@@ -108,7 +114,7 @@ const Navbar = () => {
         className={`md:hidden fixed top-0 left-0 w-full h-full bg-white flex flex-col items-start justify-start pt-24 px-6 transition-transform duration-300
           ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"} z-20`}
       >
-        <ul className="space-y-4 text-lg font-medium text-black w-full">
+        <ul className="space-y-4 text-[16px] font-medium text-black w-full">
           {/* Cars Mobile */}
           <li>
             <div
@@ -162,7 +168,7 @@ const Navbar = () => {
             <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </li>
           <li>
-            <button className="border border-gray-400 text-black rounded-full bg-transparent hover:bg-gray-400 w-full py-2">
+            <button className="border border-gray-400 text-black rounded-full bg-transparent hover:bg-gray-400 w-full py-2 text-[16px]">
               Get My Dream Car
             </button>
           </li>

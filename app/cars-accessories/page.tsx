@@ -5,7 +5,7 @@ import accessoriesData from "./data";
 
 export default function CarAccessoriesCollectionPage() {
   return (
-    <div className="p-16">
+    <div className="p-24">
       {/* Heading */}
       <div className="text-center mb-10">
         <h1 className="text-3xl font-bold">Car Accessories 🛠️</h1>
