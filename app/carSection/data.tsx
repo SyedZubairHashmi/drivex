@@ -208,7 +208,6 @@ import car8_img5 from "@/public/car1.png"
 "@/public/car1.png"
 "@/public/car1.png"
 "@/public/car1.png"
-
 const carSectionData = [
   {
     id: 1,
@@ -221,6 +220,13 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 200,000",
     sub_price: "350,000",
+    engine: "M16A-345678",
+    auction_grade: 5,
+    assembly: "Imported",
+    imported_year: 2021,
+    mileage: "15k",
+    color: "Red",
+    interior_color: "Black",
   },
   {
     id: 2,
@@ -233,6 +239,13 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 250,000",
     sub_price: "400,000",
+    engine: "E20A-123456",
+    auction_grade: 4,
+    assembly: "Local",
+    imported_year: 2020,
+    mileage: "20k",
+    color: "Blue",
+    interior_color: "Grey",
   },
   {
     id: 3,
@@ -245,6 +258,13 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 220,000",
     sub_price: "370,000",
+    engine: "M15A-987654",
+    auction_grade: 5,
+    assembly: "Imported",
+    imported_year: 2022,
+    mileage: "10k",
+    color: "White",
+    interior_color: "Beige",
   },
   {
     id: 4,
@@ -257,6 +277,13 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 280,000",
     sub_price: "450,000",
+    engine: "K20Z-112233",
+    auction_grade: 4,
+    assembly: "Imported",
+    imported_year: 2019,
+    mileage: "25k",
+    color: "Black",
+    interior_color: "Black",
   },
   {
     id: 5,
@@ -269,6 +296,13 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 230,000",
     sub_price: "380,000",
+    engine: "2NZ-FE-445566",
+    auction_grade: 5,
+    assembly: "Local",
+    imported_year: 2021,
+    mileage: "12k",
+    color: "Silver",
+    interior_color: "Black",
   },
   {
     id: 6,
@@ -281,6 +315,13 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 180,000",
     sub_price: "300,000",
+    engine: "F10A-332211",
+    auction_grade: 3,
+    assembly: "Imported",
+    imported_year: 2018,
+    mileage: "30k",
+    color: "Yellow",
+    interior_color: "Grey",
   },
   {
     id: 7,
@@ -293,6 +334,13 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 260,000",
     sub_price: "420,000",
+    engine: "L15A-778899",
+    auction_grade: 4,
+    assembly: "Local",
+    imported_year: 2020,
+    mileage: "18k",
+    color: "Blue",
+    interior_color: "Beige",
   },
   {
     id: 8,
@@ -305,7 +353,16 @@ const carSectionData = [
     price: "Price",
     amount_price: "PKR 500,000",
     sub_price: "700,000",
+    engine: "2GD-FTV-556677",
+    auction_grade: 5,
+    assembly: "Imported",
+    imported_year: 2022,
+    mileage: "8k",
+    color: "Black",
+    interior_color: "Black",
   },
 ];
 
 export default carSectionData;
+
+
