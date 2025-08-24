@@ -7,7 +7,7 @@ import { LiaCarSideSolid } from "react-icons/lia";
 
 const ProductSection = () => {
   return (
-    <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
+    <div className="max-w-[1400px] mx-auto px-4 pb-16 sm:px-6">
       <div className="pt-6 pb-6 bg-white">
         {/* Top Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3 sm:gap-0">

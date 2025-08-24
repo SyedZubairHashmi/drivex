@@ -22,9 +22,37 @@ const stories = [
       "Did everything online, even got a test drive arranged. The car arrived just as shown — clean and effortless.",
     imgSrc: "honda-civic-2019.png",
   },
+  {
+    id: 4,
+    title: "Super Easy Process, No Hidden Charges!",
+    description:
+      "Everything was transparent. From booking to delivery, it was stress-free and simple.",
+    imgSrc: "honda-civic-2019.png",
+  },
+  {
+    id: 5,
+    title: "Love My New Car!",
+    description:
+      "DriveXDeals helped me compare and get the best offer. Couldn’t be happier.",
+    imgSrc: "honda-civic-2019.png",
+  },
+  {
+    id: 6,
+    title: "Fastest Car Deal Ever!",
+    description:
+      "Within days I had the perfect car in my driveway. No extra paperwork.",
+    imgSrc: "honda-civic-2019.png",
+  },
 ];
 
-export default function BlogSection() {
+type BlogSectionProps = {
+  limit?: number; // yahan optional prop banaya
+};
+
+export default function BlogSection({ limit }: BlogSectionProps) {
+  // agar limit di gai hai to utne hi stories show hongi warna sab dikhayega
+  const displayedStories = limit ? stories.slice(0, limit) : stories;
+
   return (
     <section className="max-w-[1400px] mx-auto px-4 sm:px-6 py-12">
       <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-2">
@@ -35,7 +63,7 @@ export default function BlogSection() {
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-        {stories.map(({ id, title, description, imgSrc }) => (
+        {displayedStories.map(({ id, title, description, imgSrc }) => (
           <div
             key={id}
             className="border rounded-3xl h-[500px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center"
@@ -61,7 +89,7 @@ export default function BlogSection() {
               </div>
 
               <div className="mt-auto w-full">
-                <button className="w-full border   border-gray-300 rounded-2xl py-2 text-xl  hover:bg-gray-100 transition">
+                <button className="w-full border border-gray-300 rounded-2xl py-2 text-xl hover:bg-gray-100 transition">
                   Read My Story
                 </button>
               </div>
