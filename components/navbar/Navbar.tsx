@@ -28,10 +28,15 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex space-x-6 font-medium text-[16px]">
+        {/* Home Link */}
+        <li className="text-white cursor-pointer hover:text-green-600">
+          <Link href="/">Home</Link>
+        </li>
+
         {/* Cars Dropdown */}
-        <li className="relative cursor-pointer">
+        <li className="relative cursor-pointer text-black hover:text-green-600">
           <div
-            className="flex items-center gap-1 hover:text-green-600"
+            className="flex items-center gap-1"
             onClick={() => setCarsOpen(!carsOpen)}
           >
             Cars
@@ -52,10 +57,10 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Products Mega Menu (Fixed size, open like before) */}
-        <li className="relative cursor-pointer">
+        {/* Products Mega Menu */}
+        <li className="relative cursor-pointer text-black hover:text-green-600">
           <div
-            className="flex items-center gap-1 hover:text-green-600"
+            className="flex items-center gap-1"
             onClick={() => setProductsOpen(!productsOpen)}
           >
             Products
@@ -66,7 +71,6 @@ const Navbar = () => {
               }`}
             />
           </div>
-
           {productsOpen && (
             <div
               className="
@@ -127,14 +131,14 @@ const Navbar = () => {
           )}
         </li>
 
-        <li className="hover:text-green-600 cursor-pointer">
+        <li className="text-black hover:text-green-600 cursor-pointer">
           <Link href="/blog">Blog</Link>
         </li>
-        <li className="hover:text-green-600 cursor-pointer">
-          <Link href="/about">About</Link>
+        <li className="text-black hover:text-green-600 cursor-pointer">
+          <Link href="/gallery">Gallery</Link>
         </li>
-        <li className="hover:text-green-600 cursor-pointer">
-          <Link href="/contact">Contact</Link>
+        <li className="text-black hover:text-green-600 cursor-pointer">
+          <Link href="/contect">Contact</Link>
         </li>
       </ul>
 
@@ -158,17 +162,22 @@ const Navbar = () => {
         className={`md:hidden fixed top-0 left-0 w-full h-full bg-white flex flex-col items-start justify-start pt-24 px-6 transition-transform duration-300
           ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"} z-20`}
       >
-        <ul className="space-y-4 text-[16px] font-medium text-black w-full">
+        <ul className="space-y-4 text-[16px] font-medium w-full">
+          {/* Home Mobile */}
+          <li className="text-white">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          </li>
+
           {/* Cars Mobile */}
           <li>
             <div
-              className="flex justify-between items-center cursor-pointer"
+              className="flex justify-between items-center cursor-pointer text-black"
               onClick={() => setMobileCarsOpen(!mobileCarsOpen)}
             >
               Cars <FaChevronDown className={`transition-transform ${mobileCarsOpen ? "rotate-180" : ""}`} />
             </div>
             {mobileCarsOpen && (
-              <ul className="pl-4 mt-2 space-y-2">
+              <ul className="pl-4 mt-2 space-y-2 text-black">
                 <li><Link href="/cars-collection" onClick={() => setMobileMenuOpen(false)}>Cars Collection</Link></li>
                 <li><Link href="/cars-accessories" onClick={() => setMobileMenuOpen(false)}>Cars Accessories</Link></li>
               </ul>
@@ -178,13 +187,13 @@ const Navbar = () => {
           {/* Products Mobile (simple list) */}
           <li>
             <div
-              className="flex justify-between items-center cursor-pointer"
+              className="flex justify-between items-center cursor-pointer text-black"
               onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
             >
               Products <FaChevronDown className={`transition-transform ${mobileProductsOpen ? "rotate-180" : ""}`} />
             </div>
             {mobileProductsOpen && (
-              <ul className="pl-4 mt-2 space-y-2">
+              <ul className="pl-4 mt-2 space-y-2 text-black">
                 <li>Seat Covers</li><li>Floor Mats</li><li>Steering Wheel Covers</li>
                 <li>Dashboard Covers</li><li>Sun Shades</li><li>LED Lights</li>
                 <li>Mobile Holders</li><li>Organizers</li><li>Cushions</li>
@@ -195,9 +204,9 @@ const Navbar = () => {
             )}
           </li>
 
-          <li><Link href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</Link></li>
-          <li><Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link></li>
-          <li><Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
+          <li className="text-black"><Link href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</Link></li>
+          <li className="text-black"><Link href="/about" onClick={() => setMobileMenuOpen(false)}>About</Link></li>
+          <li className="text-black"><Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
 
           <li>
             <button className="border border-gray-400 text-black rounded-full bg-white hover:bg-gray-200 w-full py-2 text-[16px]">

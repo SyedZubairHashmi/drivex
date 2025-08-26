@@ -4,25 +4,23 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <>
-      <section className=" bg-black text-white w-full flex flex-col relative">
-        {/* Content Wrapper */}
-        <div
-          className="py-12 max-w-[1400px] mx-auto px-8 flex-col gap-20"
-          // style={{ marginLeft: '150px', marginRight: '160px' }}
-        >
+      <section className="bg-black text-white w-full flex flex-col">
+        
+        {/* TEXT CONTENT CONTAINER */}
+        <div className="w-full max-w-[1350px] mx-auto px-4 py-12">
+          
           {/* Top text and button */}
-          <div className="flex flex-col sm:flex-row justify-between items-start gap-6">
+          <div className="flex sm:flex-row justify-between items-center mb-8">
             <p className="text-gray-400 text-sm sm:text-base font-normal">
               Uncover the potency of Drive X Deals
             </p>
-           <button className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition">
-  Contact Us Now
-</button>
-
+            <button className="bg-green-500 text-white rounded-md px-4 py-2 hover:bg-green-600 transition">
+              Contact Us Now
+            </button>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal leading-snug whitespace-pre-line">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-normal leading-snug whitespace-pre-line mb-8">
             Ready to start{'\n'}with us?
           </h1>
 
@@ -62,15 +60,14 @@ export default function Footer() {
 
         {/* Bottom Center Image */}
         <div className="w-full flex justify-center mt-1 mb-4">
-  <Image
-    src="/Drive X Deals.png"
-    alt="Footer Logo"
-    width={1200}
-    height={600}
-    className="transition duration-300 ease-in-out hover:brightness-125"
-  />
-</div>
-
+          <Image
+            src="/Drive X Deals.png"
+            alt="Footer Logo"
+            width={1320}
+            height={600}
+            className="transition duration-300 ease-in-out hover:brightness-125"
+          />
+        </div>
       </section>
     </>
   );
